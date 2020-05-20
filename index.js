@@ -70,7 +70,7 @@ app.post('/api/employee/new/:id', function(req, res, next){
 app.post('/api/employee/update/', function(req, res, next){
     let id = req.params.id;
     let updated_object;
-    if(req.body!==undefined){
+    if(req.body!==undefined){ //Only see body when we applied bodyParser
         updated_object = req.body;
    
     }
@@ -88,7 +88,7 @@ app.post('/api/employee/update/', function(req, res, next){
     
     
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8444
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
 
 var ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
