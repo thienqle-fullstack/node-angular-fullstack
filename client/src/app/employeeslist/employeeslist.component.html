@@ -1,0 +1,24 @@
+<br>
+<h2>List of Employees</h2>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Edit/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+          <td (click)="selectemployee(emp)">{{emp._id}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.age}}</td>
+          <td>{{emp.salary}}</td>
+          <td><button (click)="editEmployee(emp)">Edit</button><button (click)="deleteEmployee(emp)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  
