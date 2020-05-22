@@ -10,7 +10,8 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
-  });
+  });y
+  
   
 
 data = [
@@ -56,7 +57,7 @@ app.get('/api/employee/delete/:id', function(req, res, next){
 
 
 /* NEW ONE */
-app.post('/api/employee/new/:id', function(req, res, next){
+app.post('/api/employee/new/', function(req, res, next){
     let created_object;
     if(req.body!==undefined){
         created_object = req.body;
@@ -67,7 +68,7 @@ app.post('/api/employee/new/:id', function(req, res, next){
 
 
 /* UPDATE ONE */
-app.post('/api/employee/update/', function(req, res, next){
+app.post('/api/employee/update/:id', function(req, res, next){
     let id = req.params.id;
     let updated_object;
     if(req.body!==undefined){ //Only see body when we applied bodyParser
