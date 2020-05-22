@@ -22,6 +22,10 @@ data = [
     {"id":5,"name":"Miguel R","age":35,"salary":55000}
 ]
 
+app.get('/', function (req, res) {
+    res.status('200').send('Service is up');
+});
+
 /* READ ALL */
 app.get("/api/employees", (req, res, next) => {
     res.json(data);
