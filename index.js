@@ -88,11 +88,11 @@ app.post('/api/employee/update/:id', function(req, res, next){
 });
     
     
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
-var ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
-
-app.listen(port, ip_address, function () {
+app.listen(server_port, server_ip_address, function () {
     console.log("Server running");
+    console.log( "Listening on " + server_ip_address + ", port " + server_port )
 });
