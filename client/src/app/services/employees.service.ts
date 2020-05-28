@@ -9,7 +9,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class EmployeeService {
 
-  private _url: string = "http://localhost:4000/api/employees";
+  private _url: string = "http://node-crud-demo-git-node-demo5.apps.us-east-1.starter.openshift-online.com/api/employees";
+  private _url1: string = "http://node-crud-demo-git-node-demo5.apps.us-east-1.starter.openshift-online.com/api/employee";
   constructor(private http: HttpClient) { }
 
   getEmployees(): Observable<Employee[]>{
@@ -18,7 +19,8 @@ export class EmployeeService {
   }
   
   getEmployeesById(id: number): Observable<Employee[]>{
-    return this.http.get<Employee[]>(this._url + '/' + id)
+    //console.log((this._url1 + '/' + id))
+    return this.http.get<Employee[]>(this._url1 + '/detail/' + id)
     .pipe(catchError(this.errorHandler));
   }
 
@@ -30,12 +32,12 @@ export class EmployeeService {
   updateEmployee(id: number, empData): Observable<Employee[]>{
     console.log(empData)
     console.log(this._url + '/' + id)
-    return this.http.put<Employee[]>(this._url + '/' + id, empData)
+    return this.http.post<Employee[]>(this._url1 + '/update/' + id, empData)
     .pipe(catchError(this.errorHandler));
   }
 
   deleteEmployee(id) {
-    return this.http.delete(this._url + '/' + id);
+    return this.http.get(this._url1 + '/delete/' + id);
   }
   
   errorHandler(error: HttpErrorResponse){

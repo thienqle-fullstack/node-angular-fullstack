@@ -1,9 +1,10 @@
 <br>
 <h2>List of Employees</h2>
+<button mat-raised-button color="primary">Add Employee</button>
 <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Age</th>
         <th scope="col">Salary</th>
@@ -12,11 +13,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let emp of employees">
-          <td (click)="selectemployee(emp)">{{emp._id}}</td>
+          <td class="cursor" (click)="selectemployee(emp)">{{emp.id}}</td>
           <td>{{emp.name}}</td>
           <td>{{emp.age}}</td>
           <td>{{emp.salary}}</td>
-          <td><button (click)="editEmployee(emp)">Edit</button><button (click)="deleteEmployee(emp)">Delete</button></td>
+          <td>
+            <button mat-raised-button color="primary" (click)="editEmployee(emp)">Edit</button>
+            <button mat-raised-button color="warn"(click)="deleteEmployee(emp)">Delete</button>
+          </td>
       </tr>
     </tbody>
   </table>
