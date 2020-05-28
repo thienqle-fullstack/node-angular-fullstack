@@ -15,6 +15,13 @@ export class EmployeeslistComponent implements OnInit {
   public employees;
   public errorMsg;
 
+
+  dtOptions = {
+      order: [[ 1, 'desc' ]],
+      lengthMenu: [5, 10, 15, 20, 25, 50 ],
+      responsive: true
+  }
+
   constructor(private empService: EmployeeService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -52,4 +59,7 @@ export class EmployeeslistComponent implements OnInit {
       }
     });
   }
+
+
+
 }

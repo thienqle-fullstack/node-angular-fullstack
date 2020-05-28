@@ -22,6 +22,7 @@ import { EmployeeslistComponent } from './employeeslist/employeeslist.component'
 import { EditemployeeComponent } from './editemployee/editemployee.component';
 import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     MatCardModule,
     MatButtonModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent],
