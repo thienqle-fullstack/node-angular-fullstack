@@ -1,8 +1,11 @@
 <h2>Employee Detail</h2>
+<div *ngIf="employee">
 <p>Employee Id: {{employee.id}}</p>
 <p>Name: {{employee.name}}</p>
 <p>Age: {{employee.age}} </p>
 <p>Salary: {{employee.salary}} </p>
 <div>
   <button mat-raised-button color="primary" (click)="goBack()">Go Back</button>
+</div>
+
 </div>
