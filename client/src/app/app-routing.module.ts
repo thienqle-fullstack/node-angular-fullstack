@@ -8,12 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { EmployeeslistComponent } from './employeeslist/employeeslist.component';
 import { EditemployeeComponent } from './editemployee/editemployee.component';
 import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
+import { AddemployeeComponent } from './addemployee/addemployee.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'addemployee', component: AddemployeeComponent },
   {path: 'employeelist', component: EmployeeslistComponent},
   { path: 'employeelist/:id', component: EmployeedetailsComponent },
   { path: 'editemployee/:id', component: EditemployeeComponent }
@@ -24,3 +26,12 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [LoginComponent,
+                                  RegisterComponent,
+                                  HomeComponent,
+                                  EmployeeslistComponent,
+                                  EditemployeeComponent,
+                                  EmployeedetailsComponent,
+                                  EmployeedetailsComponent,
+                                  AddemployeeComponent
+]

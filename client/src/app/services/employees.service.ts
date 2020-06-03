@@ -9,6 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class EmployeeService {
 
+  public employees;
   private _url: string = "http://node-crud-demo-git-node-demo5.apps.us-east-1.starter.openshift-online.com/api/employees";
   private _url1: string = "http://node-crud-demo-git-node-demo5.apps.us-east-1.starter.openshift-online.com/api/employee";
   constructor(private http: HttpClient) { }
@@ -25,7 +26,7 @@ export class EmployeeService {
   }
 
   postEmployee(empData): Observable<Employee[]>{
-    return this.http.post<Employee[]>(this._url, empData)
+    return this.http.post<Employee[]>(this._url1 + '/new', empData)
     .pipe(catchError(this.errorHandler));
   }
   

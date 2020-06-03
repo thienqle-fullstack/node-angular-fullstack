@@ -37,7 +37,8 @@
                   <div class="alert alert-danger" *ngIf="salary.errors.pattern">Salary must be numbers</div>
                 </div><br>
         </div>
-        <button class="btn btn-primary" [disabled]="editemployeeForm.invalid" type="submit">Update form</button>
+        <button mat-raised-button color="primary" [disabled]="editemployeeForm.invalid" type="submit">Update form</button>
+        <button mat-raised-button color="warn" type="submit">Cancel</button>
       </form>
     </div>
       <div class="alert alert-danger" *ngIf="errorMsg">

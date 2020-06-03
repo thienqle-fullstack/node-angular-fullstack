@@ -73,4 +73,8 @@ export class EditemployeeComponent implements OnInit {
     this.router.navigate(['/employeelist']);
   }
 
+  cancelForm(){
+    this.router.navigate(['/employeelist']);
+  }
+
 }
