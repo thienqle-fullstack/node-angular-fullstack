@@ -27,7 +27,7 @@ app.get("/", (req, res, next) => {
 });
 
 /* READ ONE */
-app.get('/detail/:id', (req, res, next) => {
+app.get('/:id', (req, res, next) => {
     let id = req.params.id;
     let read_object;
     for( var i = 0; i < data.length; i++)
