@@ -11,7 +11,8 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-  
+
+//Variable name is global in node js application. Do not use same name with other app
 data = [
     {"id":1,"name":"Tim Q Le","age":35,"salary":100000},
     {"id":2,"name":"Bi Q Ng","age":35,"salary":150000},

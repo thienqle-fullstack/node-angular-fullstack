@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
     next();
   });
   
-data = [
+cards = [
     {
       "id":1,"concept":"OOPs",
       "description":"Object-oriented programming is a programming paradigm based on the concept of objects",
@@ -29,17 +29,17 @@ data = [
 
 /* READ ALL */
 app.get("/", (req, res, next) => {
-  res.json(data);
+  res.json(cards);
 });
 
 /* READ ONE */
 app.get('/:id', (req, res, next) => {
   let id = req.params.id;
   let read_object;
-  for( var i = 0; i < data.length; i++)
+  for( var i = 0; i < cards.length; i++)
   { 
-      if (data[i].id == id) { //Compare between different datatype, Since params carry a string
-          read_object = data[i]
+      if (cards[i].id == id) { //Compare between different cardstype, Since params carry a string
+          read_object = cards[i]
           break;
       }
   }
@@ -50,11 +50,11 @@ app.get('/:id', (req, res, next) => {
 app.delete('/:id', function(req, res, next){
   let id = req.params.id;
   let deleted_object;
-  for( var i = 0; i < data.length; i++)
+  for( var i = 0; i < cards.length; i++)
   { 
-      if (data[i].id == id) { //Compare between different datatype, Since params carry a string
-          deleted_object = data[i]
-          data.splice(i, 1); 
+      if (cards[i].id == id) { //Compare between different cardstype, Since params carry a string
+          deleted_object = cards[i]
+          cards.splice(i, 1); 
       }
   }
   res.json(deleted_object);
@@ -66,7 +66,7 @@ app.post('/new/', function(req, res, next){
   let created_object;
   if(req.body!==undefined){
       created_object = req.body;
-      data.push(created_object)
+      cards.push(created_object)
   }
   res.json(created_object);
 });
@@ -80,12 +80,12 @@ app.put('/:id', function(req, res, next){
       updated_object = req.body;
  
   }
-  for( var i = 0; i < data.length; i++)
+  for( var i = 0; i < cards.length; i++)
   { 
-      if (data[i].id == id) { //Compare between different datatype, Since params carry a string
-          deleted_object = data[i]
-          data.splice(i, 1); 
-          data.push(updated_object)
+      if (cards[i].id == id) { //Compare between different cardstype, Since params carry a string
+          deleted_object = cards[i]
+          cards.splice(i, 1); 
+          cards.push(updated_object)
           break;
       }
   }
