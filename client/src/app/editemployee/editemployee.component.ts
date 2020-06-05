@@ -57,14 +57,13 @@ export class EditemployeeComponent implements OnInit {
     return this.editemployeeForm.get('salary');
   }
   update(employeeId, editemployeeForm){
-    console.log(this.employeeId);
-    console.log(this.editemployeeForm);
+    //console.log(this.employeeId);
+    //console.log(this.editemployeeForm);
     this.empService.updateEmployee(this.employeeId, this.editemployeeForm.value).subscribe(
       (data) => {
-        this.employee = data; 
         console.log(data);
         this.empService.getEmployees().subscribe(
-          (data) => this.employees = data,
+          (data) => this.empService.employees = data,
           (error) => this.errorMsg = error
         )
       },

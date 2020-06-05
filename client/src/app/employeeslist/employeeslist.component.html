@@ -1,7 +1,7 @@
 <div class="container">
   <br>
   <h2>List of Employees</h2>
-  <div *ngIf = "employees" class="w-75 mt-2 mx-auto">
+  <div *ngIf = "empService.employees" class="w-75 mt-2 mx-auto">
     <button mat-raised-button color="primary" routerLink="/addemployee" style="float: right;">Add Employee</button>
     <table datatable [dtOptions]="dtOptions" class="table">
         <thead>
@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let emp of employees">
+          <tr *ngFor="let emp of empService.employees">
               <td class="cursor" (click)="selectemployee(emp)">{{emp.id}}</td>
               <td>{{emp.name}}</td>
               <td>{{emp.age}}</td>

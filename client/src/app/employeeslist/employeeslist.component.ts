@@ -22,11 +22,11 @@ export class EmployeeslistComponent implements OnInit {
       responsive: true
   }
 
-  constructor(private empService: EmployeeService, private router: Router, public dialog: MatDialog) { }
+  constructor(public empService: EmployeeService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.empService.getEmployees().subscribe(
-      (data) => this.employees = data,
+      (data) => this.empService.employees = data,
       (error) => this.errorMsg = error
     )
   }
@@ -52,7 +52,7 @@ export class EmployeeslistComponent implements OnInit {
         console.log('Yes clicked');
         this.empService.deleteEmployee(employee.id).subscribe(() => {
           this.empService.getEmployees().subscribe(
-            (data) => this.employees = data,
+            (data) => this.empService.employees = data,
             (error) => this.errorMsg = error
           )
         })
