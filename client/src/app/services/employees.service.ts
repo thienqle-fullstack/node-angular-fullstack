@@ -3,13 +3,14 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Employee } from '../models/employee';
 import { catchError } from 'rxjs/operators';
+import { element } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  public employees;
+  public employees = [];
   private _url: string = "http://node-crud-demo-git-node-demo5.apps.us-east-1.starter.openshift-online.com/api/employees";
   private _url1: string = "http://node-crud-demo-git-node-demo5.apps.us-east-1.starter.openshift-online.com/api/employee";
   constructor(private http: HttpClient) { }
@@ -43,5 +44,15 @@ export class EmployeeService {
   
   errorHandler(error: HttpErrorResponse){
     return throwError(error.message || "Server Error");
+  }
+
+  generateId(employees){
+    let max=0;
+    employees.forEach((element) => {
+      if(max < element.id) {
+        max = element.id;
+      }
+    })
+    return max+1
   }
 }

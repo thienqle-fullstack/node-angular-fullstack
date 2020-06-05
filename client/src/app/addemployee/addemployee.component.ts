@@ -18,12 +18,18 @@ export class AddemployeeComponent implements OnInit {
   constructor(private fb: FormBuilder, private empService: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
-     this.employeeForm = this.fb.group({
-      id: [0, [Validators.required]],
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      age: ['', [Validators.required, Validators.pattern('^(?:1[01][0-9]|120|1[7-9]|[2-9][0-9])$')]],
-      salary: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
-    });
+    this.empService.getEmployees().subscribe(
+      (data) => {this.employees = data
+              this.employeeForm = this.fb.group({
+                  id: [this.empService.generateId(this.employees), [Validators.required]],
+                  name: ['', [Validators.required, Validators.minLength(3)]],
+                  age: ['', [Validators.required, Validators.pattern('^(?:1[01][0-9]|120|1[7-9]|[2-9][0-9])$')]],
+                  salary: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+      });}
+      ,
+      (error) => this.errorMsg = error
+    )
+     
   }
 
   onSubmit(employeeForm){
