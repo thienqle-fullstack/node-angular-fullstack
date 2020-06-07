@@ -4,4 +4,3 @@ export class Employee {
     public age: number;
     public salary: number;
 }
-
