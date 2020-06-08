@@ -27,6 +27,27 @@
       "lastName": "Admin1",
       "email": "admin1@email.com",
       "role": 0
+    },
+    {
+      "id": 5,
+      "firstName": "Thien",
+      "lastName": "Lee",
+      "email": "thien@gmail.com",
+      "role": "0"
+    },
+    {
+      "id": 6,
+      "firstName": "Miguel",
+      "lastName": "Rangel",
+      "email": "miguel@gmail.com",
+      "role": "0"
+    },
+    {
+      "id": 7,
+      "firstName": "Remya",
+      "lastName": "Ambika",
+      "email": "remya@gmail.com",
+      "role": "1"
     }
   ]
 }
