@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { EmployeeService } from '../services/employees.service';
 import { Validators, FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { EmployeeService } from 'src/app/services/employees.service';
 
 @Component({
   selector: 'app-editemployee',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormArray, Validators } from '@angular/forms';
-import { EmployeeService } from '../services/employees.service';
 import { Router } from '@angular/router';
+import { EmployeeService } from 'src/app/services/employees.service';
 
 @Component({
   selector: 'app-addemployee',

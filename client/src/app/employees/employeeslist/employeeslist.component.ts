@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../services/employees.service';
 import { Router } from '@angular/router';
-import { Employee } from '../models/employee';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { EmployeeService } from 'src/app/services/employees.service';
+import { ConfirmationDialogComponent } from 'src/app/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-employeelist',

@@ -5,10 +5,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 // import { DashboardComponent } from './dashboard/dashboard.component';
-import { EmployeeslistComponent } from './employeeslist/employeeslist.component';
-import { EditemployeeComponent } from './editemployee/editemployee.component';
-import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
-import { AddemployeeComponent } from './addemployee/addemployee.component';
+
+import { AddemployeeComponent } from './employees/addemployee/addemployee.component';
+import { EmployeeslistComponent } from './employees/employeeslist/employeeslist.component';
+import { EmployeedetailsComponent } from './employees/employeedetails/employeedetails.component';
+import { EditemployeeComponent } from './employees/editemployee/editemployee.component';
+import { UserslistComponent } from './users/userslist/userslist.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -18,7 +21,8 @@ const routes: Routes = [
   {path: 'addemployee', component: AddemployeeComponent },
   {path: 'employeelist', component: EmployeeslistComponent},
   { path: 'employeelist/:id', component: EmployeedetailsComponent },
-  { path: 'editemployee/:id', component: EditemployeeComponent }
+  { path: 'editemployee/:id', component: EditemployeeComponent },
+  { path: 'userlist', component: UserslistComponent }
 ];
 
 @NgModule({
@@ -33,5 +37,6 @@ export const routingComponents = [LoginComponent,
                                   EditemployeeComponent,
                                   EmployeedetailsComponent,
                                   EmployeedetailsComponent,
-                                  AddemployeeComponent
+                                  AddemployeeComponent,
+                                  UserslistComponent
 ]
