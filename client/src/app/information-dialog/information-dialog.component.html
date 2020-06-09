@@ -1,0 +1,19 @@
+<div mat-dialog-content>
+        <h2>{{title}}</h2>
+        <h3><strong>ID</strong>: {{id}}</h3>
+        <table class="table table-striped table-hover table-bordered">
+            <tbody>
+            <tr *ngFor="let body of headers | keyvalue; let i = index">
+                <td *ngIf="headers[i]!=='id' && headers[i]!=='password'">
+                    <strong>{{headers[i]}}</strong>
+                </td>
+                <td *ngIf="headers[i]!=='id' && headers[i]!=='password'">
+                   {{bodies[i]}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">Yes</button>
+</div>

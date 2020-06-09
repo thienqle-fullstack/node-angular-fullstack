@@ -20,13 +20,15 @@ import {MatIconModule} from '@angular/material/icon';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DataTablesModule } from 'angular-datatables';
+import { InformationDialogComponent } from './information-dialog/information-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ConfirmationDialogComponent,
-    routingComponents
+    routingComponents,
+    InformationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { DataTablesModule } from 'angular-datatables';
   providers: [],
   bootstrap: [AppComponent],
   exports:[ConfirmationDialogComponent],
-  entryComponents: [ConfirmationDialogComponent]
+  entryComponents: [ConfirmationDialogComponent,InformationDialogComponent]
 })
 
 export class AppModule { }

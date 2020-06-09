@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
+import { ConfirmationDialogComponent } from 'src/app/confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { InformationDialogComponent } from 'src/app/information-dialog/information-dialog.component';
 
 @Component({
   selector: 'app-userslist',
@@ -17,7 +20,7 @@ export class UserslistComponent implements OnInit {
     responsive: true
   }
 
-  constructor(public UsersServ: UsersService, private router: Router) { }
+  constructor(public UsersServ: UsersService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.UsersServ.getUsers().subscribe(
@@ -29,12 +32,22 @@ export class UserslistComponent implements OnInit {
   selectuser(user){
     console.log(user)
     //this.router.navigate(['/employeelist', employee.id]);
+    let content = {
+      title: 'User Details',
+      objects: user,
+      id: user.id
+    }
+    const dialogRef = this.dialog.open(InformationDialogComponent, {
+      width: '50%',
+      data: content
+    });
   }
 
   editUser(user){
     console.log(user)
     //this.router.navigate(['/editemployee', user.id]);
   }
+
 
 
   deleteUser(user){

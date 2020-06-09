@@ -1,6 +1,6 @@
 <div class="container">
     <br>
-    <h2>List of USers</h2>
+    <h2>List of Users</h2>
     <div *ngIf = "UsersServ.users" class="w-75 mt-2 mx-auto">
       <button mat-raised-button color="primary" routerLink="/adduser" style="float: right;">Add User</button>
       <table datatable [dtOptions]="dtOptions" class="table">
