@@ -1,7 +1,7 @@
 <div mat-dialog-content>
         <h2>{{title}}</h2>
         <h3><strong>ID</strong>: {{id}}</h3>
-        <table class="table table-striped table-hover table-bordered">
+        <table class="table table-hover table-bordered">
             <tbody>
             <tr *ngFor="let body of headers | keyvalue; let i = index">
                 <td *ngIf="headers[i]!=='id' && headers[i]!=='password'">
