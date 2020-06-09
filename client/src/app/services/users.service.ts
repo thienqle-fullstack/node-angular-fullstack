@@ -10,13 +10,14 @@ import { catchError } from 'rxjs/operators';
 export class UsersService {
 
 
-  public users = [];
   // public users = [
-  //   {"id": 1, 'firstName' :	'Admin', 'lastName': 'Admin', 'email' :	'admin@email.com', 'role' : 0},
-  //   {"id": 2, 'firstName' :	'First', 'lastName': 'User', 'email' :	'user1@email.com', 'role' : 1},
-  //   {"id": 3, 'firstName' :	'Second', 'lastName': 'User', 'email' :	'user2@email.com', 'role' : 1},
+    // {"id": 1, 'firstName' :	'Admin', 'lastName': 'Admin', 'email' :	'admin@email.com', 'role' : 0},
+    // {"id": 2, 'firstName' :	'First', 'lastName': 'User', 'email' :	'user1@email.com', 'role' : 1},
+    // {"id": 3, 'firstName' :	'Second', 'lastName': 'User', 'email' :	'user2@email.com', 'role' : 1},
   // ];
-  private _url: string = "http://localhost:4000/user";
+
+  public users : User[] = [];
+  private _url: string = "http://localhost:4000/users";
   
   constructor(private http: HttpClient) { }
 
@@ -33,7 +34,7 @@ export class UsersService {
   }
 
   postUsers(userData): Observable<User[]>{
-    return this.http.post<User[]>(this._url + '/', userData)
+    return this.http.post<User[]>(this._url + '/new', userData)
     .pipe(catchError(this.errorHandler));
   }
   

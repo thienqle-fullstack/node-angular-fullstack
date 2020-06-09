@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './authentication/login/login.component';
+
 import { HomeComponent } from './home/home.component';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -13,6 +13,7 @@ import { EditemployeeComponent } from './employees/editemployee/editemployee.com
 import { UserslistComponent } from './users/userslist/userslist.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
 import { EdituserComponent } from './users/edituser/edituser.component';
+import { RegisterComponent } from './authentication/register/register.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
