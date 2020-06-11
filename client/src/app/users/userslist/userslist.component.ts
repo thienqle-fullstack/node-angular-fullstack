@@ -45,27 +45,24 @@ export class UserslistComponent implements OnInit {
 
   editUser(user){
     console.log(user)
-    //this.router.navigate(['/editemployee', user.id]);
+    this.router.navigate(['/edituser', user.id]);
   }
-
-
 
   deleteUser(user){
-    // const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-    //   width: '350px',
-    //   data: "Do you confirm the deletion of this data?"
-    // });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if(result) {
-    //     console.log('Yes clicked');
-    //     this.empService.deleteEmployee(employee.id).subscribe(() => {
-    //       this.empService.getEmployees().subscribe(
-    //         (data) => this.empService.employees = data,
-    //         (error) => this.errorMsg = error
-    //       )
-    //     })
-    //   }
-    // });
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '350px',
+      data: "Do you confirm the deletion of this data?"
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        console.log('Yes clicked');
+        this.UsersServ.deleteEmployee(user.id).subscribe(() => {
+          this.UsersServ.getUsers().subscribe(
+            (data) => this.UsersServ.users = data,
+            (error) => this.errorMsg = error
+          )
+        })
+      }
+    });
   }
-
 }

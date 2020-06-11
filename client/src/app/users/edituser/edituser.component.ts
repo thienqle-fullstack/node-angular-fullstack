@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Validators, FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { EmployeeService } from 'src/app/services/employees.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-edituser',
@@ -14,12 +15,12 @@ export class EdituserComponent implements OnInit {
   user;
   errorMsg: any;
 
-  constructor(private actRoute: ActivatedRoute, private empService: EmployeeService, private fb: FormBuilder, private router: Router) { }
+  constructor(private actRoute: ActivatedRoute, public UsersServ: UsersService, private fb: FormBuilder, private router: Router) { }
 
   public edituserForm = this.fb.group({
     id: [this.userId],
-    firstName: ['', [Validators.required, Validators.minLength(3)]],
-    lastName: ['', [Validators.required, Validators.minLength(3)]],
+    firstname: ['', [Validators.required, Validators.minLength(3)]],
+    lastname: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
     role: ['', [Validators.required]]
   });
@@ -30,14 +31,14 @@ export class EdituserComponent implements OnInit {
       console.log(id)
       this.userId = id;
       console.log(this.userId);
-      this.user = this.empService.getEmployeesById(this.userId).subscribe(
+      this.user = this.UsersServ.getUsersById(this.userId).subscribe(
         (data) => {this.user = data; console.log(data);
           this.edituserForm = this.fb.group({
             id: [this.userId],
-            firstName: ['', [Validators.required, Validators.minLength(3)]],
-            lastName: ['', [Validators.required, Validators.minLength(3)]],
-            email: ['', [Validators.required, Validators.email]],
-            role: ['', [Validators.required]]
+            firstname: [this.user.firstname, [Validators.required, Validators.minLength(3)]],
+            lastname: [this.user.lastname, [Validators.required, Validators.minLength(3)]],
+            email: [this.user.email, [Validators.required, Validators.email]],
+            role: [this.user.role, [Validators.required]]
           });
         },
         (error) => {this.errorMsg = error; console.log(error); }
@@ -49,12 +50,12 @@ export class EdituserComponent implements OnInit {
     return this.edituserForm.get('id');
   }
 
-  get firstName() {
-    return this.edituserForm.get('firstName');
+  get firstname() {
+    return this.edituserForm.get('firstname');
   }
 
-  get lastName() {
-    return this.edituserForm.get('lastName');
+  get lastname() {
+    return this.edituserForm.get('lastname');
   }
 
   get email() {
@@ -65,14 +66,12 @@ export class EdituserComponent implements OnInit {
     return this.edituserForm.get('role');
   }
 
-  update(employeeId, editemployeeForm){
-    //console.log(this.employeeId);
-    //console.log(this.editemployeeForm);
-    this.empService.updateEmployee(this.userId, this.edituserForm.value).subscribe(
+  update(userId, edituserForm){
+    this.UsersServ.updateUser(this.userId, this.edituserForm.value).subscribe(
       (data) => {
         console.log(data);
-        this.empService.getEmployees().subscribe(
-          (data) => this.empService.employees = data,
+        this.UsersServ.getUsers().subscribe(
+          (data) => {this.UsersServ.users = data; console.log(data)},
           (error) => this.errorMsg = error
         )
       },

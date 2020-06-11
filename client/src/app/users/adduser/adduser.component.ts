@@ -60,12 +60,12 @@ export class AdduserComponent implements OnInit {
     return this.userForm.get('id');
   }
 
-  get firstName() {
-    return this.userForm.get('firstName');
+  get firstname() {
+    return this.userForm.get('firstname');
   }
 
-  get lastName() {
-    return this.userForm.get('lastName');
+  get lastname() {
+    return this.userForm.get('lastname');
   }
 
   get email() {

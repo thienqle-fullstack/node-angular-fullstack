@@ -9,21 +9,21 @@
        
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" [class.is-invalid]="firstName.invalid && firstName.touched" 
-          formControlName="firstName" class="form-control">
-          <div *ngIf="firstName.errors && firstName.touched">
-            <div class="alert alert-danger" *ngIf="firstName.errors?.required">First Name is required</div>
-            <div class="alert alert-danger" *ngIf="firstName.errors?.minlength">First Name must be at least 3 characters</div>
+          <input type="text" [class.is-invalid]="firstname.invalid && firstname.touched" 
+          formControlName="firstname" class="form-control">
+          <div *ngIf="firstname.errors && firstname.touched">
+            <div class="alert alert-danger" *ngIf="firstname.errors?.required">First Name is required</div>
+            <div class="alert alert-danger" *ngIf="firstname.errors?.minlength">First Name must be at least 3 characters</div>
           </div>
         </div>
 
         <div class="form-group">
             <label>Last Name</label>
-            <input type="text" [class.is-invalid]="lastName.invalid && lastName.touched" 
-            formControlName="lastName" class="form-control">
-            <div *ngIf="lastName.errors && lastName.touched">
-              <div class="alert alert-danger" *ngIf="lastName.errors?.required">Last Name is required</div>
-              <div class="alert alert-danger" *ngIf="lastName.errors?.minlength">Last Name must be at least 3 characters</div>
+            <input type="text" [class.is-invalid]="lastname.invalid && lastname.touched" 
+            formControlName="lastname" class="form-control">
+            <div *ngIf="lastname.errors && lastname.touched">
+              <div class="alert alert-danger" *ngIf="lastname.errors?.required">Last Name is required</div>
+              <div class="alert alert-danger" *ngIf="lastname.errors?.minlength">Last Name must be at least 3 characters</div>
             </div>
           </div>
   

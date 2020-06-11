@@ -1,36 +1,51 @@
 {
   "users": [
     {
-      "email": "admin@mail.com",
-      "password": "$2a$10$39sayyF5w4vGQSmgVwkssuZIA/FvJR1vj5RdnOun5a6nu99oiMRny",
-      "firstname": "Admin",
-      "lastname": "Admin",
-      "role": 0,
-      "id": 1
+      "id": 2,
+      "firstname": "Thien",
+      "lastname": "Lee",
+      "email": "admin4@mail.com",
+      "role": 0
     },
     {
-      "email": "admin1@mail.com",
-      "password": "$2a$10$yA.LPlYIL0JK4B561cSHleUEFbY5BDc7.0sp7Di7Ff./xwae5KBQW",
-      "firstname": "First",
-      "lastname": "Admin",
-      "role": 0,
-      "id": 2
+      "id": 3,
+      "firstname": "Miguel",
+      "lastname": "Rangel",
+      "password": "1234",
+      "email": "miguel@summitworks.com",
+      "role": "1"
     },
     {
-      "email": "user1@mail.com",
-      "password": "$2a$10$eh4dKJfb9Fr.Tzi7feO6FuZ5KjVlHud/ZZ5CR91jkwJXIOYRZJOZC",
-      "firstname": "First",
-      "lastname": "User",
+      "email": "olivier@mail.com",
+      "password": "$2a$10$Yed3twmMgcU1f/SSz3.jJeRKN8oZObARe0IayNYwm0u962sbCgVhq",
+      "firstname": "Olivier",
+      "lastname": "Monge",
       "role": 1,
       "id": 4
     },
     {
-      "email": "user2@mail.com",
-      "password": "$2a$10$yJLvippyqYyjJ945sJ88d.gGVHhZk3J2AEsy1BWwwoEuBfpERmOUC",
-      "firstname": "Second",
-      "lastname": "User",
-      "role": 1,
+      "email": "remya@gmail.com",
+      "password": "$2a$10$9HEwYRh40nNBKpoH2Nufre2..zFBV26WMLrf7w4QYjCBIyDvkiVOO",
+      "firstname": "Remya",
+      "lastname": "Ambika",
+      "role": "1",
       "id": 5
+    },
+    {
+      "email": "olivier2@mail.com",
+      "password": "$2a$10$VE6E50r5Bkk9qkAqimgs1ui1G5BteO2T6RAmX07QGpchFCCTwBRXG",
+      "firstname": "Olivier",
+      "lastname": "Monge",
+      "role": 1,
+      "id": 6
+    },
+    {
+      "email": "miguel@gmail.com",
+      "password": "$2a$10$6MwjtoBiYdNdyxfqTJ0Hx.FQNRozLZfRM2dwdsm6/qrzwnedhU.Q2",
+      "firstname": "Miguel",
+      "lastname": "Rangel",
+      "role": "1",
+      "id": 7
     }
   ]
 }

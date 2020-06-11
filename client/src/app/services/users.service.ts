@@ -34,7 +34,7 @@ export class UsersService {
   }
 
   postUsers(userData): Observable<User[]>{
-    return this.http.post<User[]>(this._url + '/new', userData)
+    return this.http.post<User[]>(this._url + '/', userData)
     .pipe(catchError(this.errorHandler));
   }
   
