@@ -18,6 +18,11 @@ export class AuthService {
     // .pipe(catchError(this.errorHandler));
   }
 
+  login(loginData):Observable {
+    return this.http.post(this._url + '/login', loginData)
+  }
+
+
   errorHandler(error: HttpErrorResponse){
     return throwError(error.message || "Server Error");
   }
