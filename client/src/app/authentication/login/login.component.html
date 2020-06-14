@@ -14,7 +14,7 @@
         formControlName="password" class="form-control">
             <div *ngIf="password.errors && password.touched">
               <div class="alert alert-danger" *ngIf="password.errors?.required">Password is required</div>
-              <div class="alert alert-danger" *ngIf="password.errors?.minlength">Password must be at least 5 characters</div>
+              <div class="alert alert-danger" *ngIf="password.errors?.minlength">Password must be at least 4 characters</div>
             </div><br>
        <button mat-raised-button color="primary" [disabled]="!employeeForm.valid" type="submit">Login</button>
        <button mat-raised-button color="primary" type="submit" (click)="register()">Register</button>

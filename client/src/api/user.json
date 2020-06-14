@@ -1,21 +1,6 @@
 {
   "users": [
     {
-      "id": 2,
-      "firstname": "Thien",
-      "lastname": "Lee",
-      "email": "admin4@mail.com",
-      "role": 0
-    },
-    {
-      "id": 3,
-      "firstname": "Miguel",
-      "lastname": "Rangel",
-      "password": "1234",
-      "email": "miguel@summitworks.com",
-      "role": "1"
-    },
-    {
       "email": "olivier@mail.com",
       "password": "$2a$10$Yed3twmMgcU1f/SSz3.jJeRKN8oZObARe0IayNYwm0u962sbCgVhq",
       "firstname": "Olivier",
@@ -46,17 +31,24 @@
       "lastname": "Rangel",
       "role": "1",
       "id": 7
+    },
+    {
+      "email": "thien@summitworks.com",
+      "password": "$2a$10$J0hFNuD6qPQNbAsh0E3i6eh15WvnQlosYCjaRhIGVQS0sxexK9Gwi",
+      "id": 8,
+      "firstname": "Thien",
+      "lastname": "Lee",
+      "role": "0"
     }
   ],
   "events": [
     {
-        "id": 1,
-        "name": "Training",
-        "category": "working",
-        "location": "South Plainfield",
-        "startDate": "2020-06-10T00:00:00.000Z",
-        "endDate":	"2020-06-11T00:00:00.000Z"
-      
+      "id": 1,
+      "name": "Training",
+      "category": "working",
+      "location": "South Plainfield",
+      "startDate": "2020-06-10T00:00:00.000Z",
+      "endDate": "2020-06-11T00:00:00.000Z"
     },
     {
       "id": 2,
@@ -64,7 +56,7 @@
       "category": "happy hour",
       "location": "New Jersey",
       "startDate": "2020-06-10T00:00:00.000Z",
-      "endDate":	"2020-06-11T00:00:00.000Z"
+      "endDate": "2020-06-11T00:00:00.000Z"
     }
   ]
 }

@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class RegisterComponent implements OnInit {
   public userForm;
   errorMsg: any;
-  users: import("d:/RemyaSummitworks/BootcampMaterials/WebUI/ERP App version2/node-crud-demo/client/src/app/models/user").User[];
+  users: User[];
 
   constructor(private fb: FormBuilder, private router: Router, public UsersServ: UsersService, public authServ: AuthService) { }
 

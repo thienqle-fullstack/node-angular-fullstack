@@ -13,7 +13,7 @@ export class EmployeeService {
   public employees = [];
   private _url: string = "http://node-crud-demo-git-node-demo5.apps.us-east-1.starter.openshift-online.com/api/employees";
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getEmployees(): Observable<Employee[]>{
     return this.http.get<Employee[]>(this._url)
