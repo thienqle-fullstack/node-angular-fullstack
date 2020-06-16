@@ -1,0 +1,79 @@
+<div *ngIf="eventForm" class="container-fluid">
+    <h2>Add Event</h2>
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm)">
+      
+        <div class="form-group">
+          <label>Id</label>
+          <input type="text" disabled formControlName="id" >
+        </div>
+       
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" [class.is-invalid]="name.invalid && name.touched" 
+          formControlName="name" class="form-control">
+          <div *ngIf="name.errors && name.touched">
+            <div class="alert alert-danger" *ngIf="name.errors?.required">Name is required</div>
+            <div class="alert alert-danger" *ngIf="name.errors?.minlength">Name must be at least 3 characters</div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label>Category</label>
+          <input type="text" [class.is-invalid]="category.invalid && category.touched" 
+            formControlName="category" class="form-control">
+          <div *ngIf="category.errors && category.touched">
+            <div class="alert alert-danger" *ngIf="category.errors?.required">Category is required</div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" [class.is-invalid]="location.invalid && location.touched" 
+            formControlName="location" class="form-control">
+          <div *ngIf="location.touched && location.errors">
+            <div class="alert alert-danger" *ngIf="location.errors.required">Location is required</div>
+          </div><br>
+        </div>
+
+        <mat-form-field class="example-full-width" MatFormFieldControl>
+            <mat-label>Start date</mat-label>
+            <input matInput [matDatepicker]="picker1" [min]="minDate" 
+            [class.is-invalid]="startDate.invalid && startDate.touched" 
+            formControlName="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>&nbsp;&nbsp;
+        <div *ngIf="startDate.touched && startDate.errors">
+            <div class="alert alert-danger" *ngIf="startDate.errors.required">startDate is required</div>
+            <!-- <div *ngIf="error.isError" class="alert alert-danger">
+              {{ error.errorMessage }}
+           </div> -->
+          </div>
+        <br/>
+
+       
+        <mat-form-field class="example-full-width" MatFormFieldControl>
+            <mat-label>End date</mat-label>
+            <input matInput [matDatepicker]="picker2" [min]="maxDate"
+            [class.is-invalid]="endDate.invalid && endDate.touched"
+            formControlName="endDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field><br/>
+        <div *ngIf="endDate.touched && endDate.errors">
+            <div class="alert alert-danger" *ngIf="endDate.errors.required">endDate is required</div>
+            <!-- <div *ngIf="error.isError" class="alert alert-danger">
+              {{ error.errorMessage }}
+            </div> -->
+          </div>
+        <br/>
+
+       <button mat-raised-button color="primary" [disabled]="!eventForm.valid" type="submit">Submit form</button>
+       <button mat-raised-button color="warn" type="submit" (click)="cancelForm()">Cancel</button>
+    </form>
+  </div>
+  

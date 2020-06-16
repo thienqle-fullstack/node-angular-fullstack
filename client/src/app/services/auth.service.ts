@@ -25,7 +25,6 @@ export class AuthService {
     return this.http.post<LoginUser>(this._url + '/login', loginData)
   }
 
-
   errorHandler(error: HttpErrorResponse){
     return throwError(error.message || "Server Error");
   }

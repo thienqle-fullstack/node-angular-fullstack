@@ -14,6 +14,10 @@ import { UserslistComponent } from './users/userslist/userslist.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
 import { EdituserComponent } from './users/edituser/edituser.component';
 import { RegisterComponent } from './authentication/register/register.component';
+import { EventslistComponent } from './events/eventslist/eventslist.component';
+import { AddeventComponent } from './events/addevent/addevent.component';
+import { EditeventComponent } from './events/editevent/editevent.component';
+import { EventdetailsComponent } from './events/eventdetails/eventdetails.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -27,6 +31,10 @@ const routes: Routes = [
   { path: 'userlist', component: UserslistComponent },
   { path: 'adduser', component: AdduserComponent },
   { path: 'edituser/:id', component: EdituserComponent },
+  { path: 'eventslist', component: EventslistComponent },
+  { path: 'addevent', component: AddeventComponent },
+  { path: 'editevent/:id', component: EditeventComponent },
+  { path: 'eventslist/:id', component: EventdetailsComponent },
 ];
 
 @NgModule({
@@ -44,5 +52,9 @@ export const routingComponents = [LoginComponent,
                                   AddemployeeComponent,
                                   UserslistComponent,
                                   AdduserComponent,
-                                  EdituserComponent
+                                  EdituserComponent,
+                                  EventslistComponent,
+                                  AddeventComponent,
+                                  EditeventComponent,
+                                  EventdetailsComponent
 ]

@@ -16,11 +16,17 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DataTablesModule } from 'angular-datatables';
 import { InformationDialogComponent } from './information-dialog/information-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +51,12 @@ import { InformationDialogComponent } from './information-dialog/information-dia
     MatCheckboxModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -19,6 +19,7 @@ export class UserslistComponent implements OnInit {
     lengthMenu: [5, 10, 15, 20, 25, 50 ],
     responsive: true
   }
+  breakpoint: number;
 
   constructor(public UsersServ: UsersService, private router: Router, public dialog: MatDialog) { }
 
@@ -28,6 +29,7 @@ export class UserslistComponent implements OnInit {
       (error) => this.errorMsg = error
     )
   }
+
 
   selectuser(user){
     console.log(user)

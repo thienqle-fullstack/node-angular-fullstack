@@ -1,0 +1,29 @@
+<div class="container">
+    <br>
+    <h2>List of Events</h2>
+    <div *ngIf = "eventsServ.events" class="w-75 mt-2 mx-auto">
+      <button mat-raised-button color="primary" routerLink="/addevent" style="float: right;">Add Event</button>
+    </div>
+  </div><br/><br/>
+  <mat-grid-list [cols]="breakpoint" *ngIf ="eventsServ.events" cols="3" rowHeight="1:1" gutterSize="10px"
+  (window:resize)="onResize($event)">
+    <mat-grid-tile class="cursor" *ngFor="let event of eventsServ.events">
+      <div class="text-inside-grid"> 
+        <ul style="list-style: none;" class="cursor" (click)="selectEvent(event)">
+          <li>ID: {{event.id}}</li>
+          <li>Name: {{event.name}}</li>
+          <li>Category: {{event.category}}</li>
+          <li>Location: {{event.location}}</li>
+          <li>Start Date: {{event.startDate | date: 'shortDate'}}</li>
+          <li>End Date: {{event.endDate | date: 'shortDate'}}</li>
+          <li>
+            <button mat-raised-button color="primary" (click)="editEvent(event)">Edit</button>
+            <button mat-raised-button color="warn"(click)="deleteEvent(event)">Delete</button>
+          </li>
+         </ul> 
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+  
+  
