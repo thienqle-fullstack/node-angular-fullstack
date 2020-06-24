@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { EventsService } from '../.././services/events.service'
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -22,7 +22,7 @@ export class EventslistComponent implements OnInit {
   }
   breakpoint: number;
 
-  constructor(public eventsServ: EventsService, private router: Router, public dialog: MatDialog) { }
+  constructor(public eventsServ: EventsService, private router: Router, public dialog: MatDialog, private element: ElementRef) { }
 
   ngOnInit(): void {
     this.breakpoint = (window.innerWidth <= 600) ? 1:6;
@@ -55,7 +55,14 @@ export class EventslistComponent implements OnInit {
     this.router.navigate(['/editevent', event.id]);
   }
 
-  deleteEvent(event){
+  deleteEvent(event,$event){
+    //let element = this.element.nativeElement.querySelectorAll('.prevent-'+i);
+    // console.log(element[0])
+    // element[0].addEventListener("click", function(event){
+    //   event.preventDefault()
+    // });
+    $event.stopPropagation();
+
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '350px',
       data: "Do you confirm the deletion of this data?"
