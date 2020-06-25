@@ -1,6 +1,6 @@
 body {
   font-family: "Karla", sans-serif;
-  background-color: #fff;
+  background-color: #fff0d1ff;
   min-height: 100vh; }
 
 .brand-wrapper {
@@ -16,7 +16,7 @@ body {
   -webkit-box-direction: normal;
           flex-direction: column;
   padding: 68px 100px;
-  background-color: #fff; }
+  background-color: #fff0d1ff; }
   @media (max-width: 991px) {
     .login-section-wrapper {
       padding-left: 50px;
@@ -59,16 +59,16 @@ body {
       color: #b0adad; }
   .login-wrapper .login-btn {
     padding: 13px 20px;
-    background-color: #fdbb28;
+    background-color: #f72585ff;
     border-radius: 0;
     font-size: 20px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 14px; }
     .login-wrapper .login-btn:hover {
-      border: 1px solid #fdbb28;
-      background-color: #fff;
-      color: #fdbb28; }
+      border: 1px solid #f72585ff;
+      background-color: #7209b7ff;
+      color: #4cc9f0ff; }
   .login-wrapper a.forgot-password-link {
     color: #080808;
     font-size: 14px;
@@ -91,7 +91,7 @@ body {
 
 .login-img {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: left;
