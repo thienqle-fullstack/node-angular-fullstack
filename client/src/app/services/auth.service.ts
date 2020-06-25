@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from '../models/user';
 import { LoginUser } from '../models/LoginUser';
@@ -11,9 +11,14 @@ export class AuthService {
   public currentuser : LoginUser = null;
   public users = [];
   private _url: string = "http://localhost:4000";
+  private loggedIn = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { 
     this.currentuser = JSON.parse(localStorage.getItem('currentuser'))
+  }
+
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
   }
 
   register(userData): Observable<User[]>{
@@ -22,6 +27,7 @@ export class AuthService {
   }
 
   login(loginData):Observable<LoginUser> {
+    this.loggedIn.next(true);
     return this.http.post<LoginUser>(this._url + '/login', loginData)
   }
 

@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
     <form [formGroup]="employeeForm" (ngSubmit)="onSubmit(employeeForm)">
       
         <label>Email</label>
@@ -19,4 +19,49 @@
        <button mat-raised-button color="primary" [disabled]="!employeeForm.valid" type="submit">Login</button>
        <button mat-raised-button color="primary" type="submit" (click)="register()">Register</button>
     </form>
+</mat-card> -->
+<mat-card>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm login-section-wrapper">
+          <div class="brand-wrapper">
+            <img src="assets/images/logo.svg" alt="logo" class="logo">
+          </div>
+          <div class="login-wrapper my-auto">
+            <h1 class="login-title">Log in</h1>
+            <form [formGroup]="employeeForm">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" [class.is-invalid]="email.invalid && email.touched" 
+                  formControlName="email" class="form-control">
+                    <div *ngIf="email.errors && email.touched">
+                      <div class="alert alert-danger" *ngIf="email.errors?.required">Email is required</div>
+                      <div class="alert alert-danger" *ngIf="email.errors.email">Email is not valid</div>
+                    </div>
+              </div>
+              <div class="form-group mb-4">
+                <label>Password</label>
+                <input type="password" [class.is-invalid]="password.invalid && password.touched" 
+                  formControlName="password" class="form-control">
+                <div *ngIf="password.errors && password.touched">
+                  <div class="alert alert-danger" *ngIf="password.errors?.required">Password is required</div>
+                  <div class="alert alert-danger" *ngIf="password.errors?.minlength">Password must be at least 4 characters</div>
+                </div><br>
+              </div>
+              <input name="login" id="login" [disabled]="!employeeForm.valid" class="btn btn-block login-btn" type="button" value="Login"
+              (click)="onSubmit(employeeForm)">
+            </form>
+            <a href="#!" class="forgot-password-link">Forgot password?</a>
+            <p class="login-wrapper-footer-text">Don't have an account? 
+              <a class="text-reset" routerLink="/register">Register here</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-sm">
+          <img src="assets/images/login2.jpg" alt="login image" class="login-img">
+        </div>
+      </div>
+    </div>
+  </main>
 </mat-card>
