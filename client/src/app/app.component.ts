@@ -1,24 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Location } from "@angular/common";
+import { Router } from '@angular/router';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit,AfterViewInit{
   title = 'employee-management-app';  
   isLoggedIn$: Observable<boolean>;
+  currentPath: any;
+  checkclick;
 
-
-  constructor(public authService : AuthService, private router:Router) {}
+  constructor(public authService : AuthService,private router: Router,public location: Location) {}
 
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn;
+    this.currentPath = this.location.path();
   }
   
+
+  ngAfterViewInit(){
+    this.currentPath = this.location.path();
+  }
 
   logout(){
       console.log("Logout call!")
@@ -32,5 +40,18 @@ export class AppComponent implements OnInit{
       this.router.navigate(['/login']);
   }
 
+  checkClicked($variablefromchild){
+    this.checkclick = $variablefromchild
+    if(this.checkclick){
+      this.currentPath = '/login'
+    } else {
+      this.currentPath = '/home'
+    }
+  }
+
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event) {
+    console.log('Back button pressed');
+  }
 
 }

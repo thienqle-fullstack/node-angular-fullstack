@@ -28,6 +28,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { InformationDialogComponent } from './information-dialog/information-dialog.component';
 import { LoginGaurdGuard } from './route-gaurd/login-gaurd.guard';
 import { RolesGuard } from './route-gaurd/roles.guard';
+// import { CommonModule } from '@angular/common';
 
 
 @NgModule({

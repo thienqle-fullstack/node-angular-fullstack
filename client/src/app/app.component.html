@@ -1,4 +1,5 @@
-<mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">
+<div *ngIf="currentPath!='/home'; else homeblock">
+<mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn ">
   <mat-toolbar-row *ngIf = "isLoggedIn$ | async as isLoggedIn" >
     <!-- <button mat-icon-button>
       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
@@ -38,3 +39,8 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container> -->
+</div>
+<ng-template #homeblock>
+  <!-- $event carries our child variable -->
+  <app-home (notify)="checkClicked($event)"></app-home>
+</ng-template>
