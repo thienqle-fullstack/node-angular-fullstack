@@ -1,3 +1,4 @@
+<div *ngIf = "isLoggedIn$ | async as isLoggedIn; else loginblock" class="mat-typography"> 
 <mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">
   <mat-toolbar-row>
     <!-- <button mat-icon-button>
@@ -38,3 +39,7 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container> -->
+</div>
+<ng-template #loginblock>
+  <app-login></app-login>
+</ng-template> 

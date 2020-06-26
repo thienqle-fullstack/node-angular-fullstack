@@ -12,6 +12,8 @@ export class AppComponent implements OnInit{
   title = 'employee-management-app';  
   isLoggedIn$: Observable<boolean>;
 
+  isAuthenticated:any;
+
   constructor(public authService : AuthService, private router:Router) {}
 
   ngOnInit() {
@@ -25,5 +27,9 @@ export class AppComponent implements OnInit{
       localStorage.clear(); //removeItem cant seem to work
       this.authService.currentuser = null;
       this.router.navigate(['/login']);
+  }
+
+  isAuthenticate(){
+    return localStorage.getItem('currentuser');
   }
 }
