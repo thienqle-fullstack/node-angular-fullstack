@@ -12,7 +12,6 @@ export class AppComponent implements OnInit{
   title = 'employee-management-app';  
   isLoggedIn$: Observable<boolean>;
 
-  isAuthenticated:any;
 
   constructor(public authService : AuthService, private router:Router) {}
 
@@ -23,13 +22,15 @@ export class AppComponent implements OnInit{
 
   logout(){
       console.log("Logout call!")
+      this.authService.logout();
       localStorage.removeItem('currentUser');
       localStorage.clear(); //removeItem cant seem to work
       this.authService.currentuser = null;
+      this.isLoggedIn$ = this.authService.isLoggedIn;
+      console.log('here ')
+      console.log(this.isLoggedIn$)
       this.router.navigate(['/login']);
   }
 
-  isAuthenticate(){
-    return localStorage.getItem('currentuser');
-  }
+
 }

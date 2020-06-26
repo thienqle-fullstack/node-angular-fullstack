@@ -18,23 +18,25 @@ import { EventslistComponent } from './events/eventslist/eventslist.component';
 import { AddeventComponent } from './events/addevent/addevent.component';
 import { EditeventComponent } from './events/editevent/editevent.component';
 import { EventdetailsComponent } from './events/eventdetails/eventdetails.component';
+import { LoginGaurdGuard } from './route-gaurd/login-gaurd.guard';
+import { RolesGuard } from './route-gaurd/roles.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'addemployee', component: AddemployeeComponent },
-  {path: 'employeelist', component: EmployeeslistComponent},
-  { path: 'employeelist/:id', component: EmployeedetailsComponent },
-  { path: 'editemployee/:id', component: EditemployeeComponent },
-  { path: 'userlist', component: UserslistComponent },
-  { path: 'adduser', component: AdduserComponent },
-  { path: 'edituser/:id', component: EdituserComponent },
-  { path: 'eventslist', component: EventslistComponent },
-  { path: 'addevent', component: AddeventComponent },
-  { path: 'editevent/:id', component: EditeventComponent },
-  { path: 'eventslist/:id', component: EventdetailsComponent },
+  {path: 'addemployee', component: AddemployeeComponent,canActivate:[LoginGaurdGuard,RolesGuard]},
+  {path: 'employeelist', component: EmployeeslistComponent,canActivate:[LoginGaurdGuard,RolesGuard]},
+  { path: 'employeelist/:id', component: EmployeedetailsComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
+  { path: 'editemployee/:id', component: EditemployeeComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
+  { path: 'userlist', component: UserslistComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
+  { path: 'adduser', component: AdduserComponent ,canActivate:[LoginGaurdGuard,RolesGuard]},
+  { path: 'edituser/:id', component: EdituserComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
+  { path: 'eventslist', component: EventslistComponent,canActivate:[LoginGaurdGuard] },
+  { path: 'addevent', component: AddeventComponent,canActivate:[LoginGaurdGuard] },
+  { path: 'editevent/:id', component: EditeventComponent,canActivate:[LoginGaurdGuard] },
+  { path: 'eventslist/:id', component: EventdetailsComponent,canActivate:[LoginGaurdGuard] },
 ];
 
 @NgModule({

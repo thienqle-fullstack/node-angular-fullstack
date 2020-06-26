@@ -26,6 +26,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DataTablesModule } from 'angular-datatables';
 import { InformationDialogComponent } from './information-dialog/information-dialog.component';
+import { LoginGaurdGuard } from './route-gaurd/login-gaurd.guard';
+import { RolesGuard } from './route-gaurd/roles.guard';
 
 
 @NgModule({
@@ -58,7 +60,7 @@ import { InformationDialogComponent } from './information-dialog/information-dia
     MatInputModule,
     MatGridListModule
   ],
-  providers: [],
+  providers: [LoginGaurdGuard,RolesGuard],
   bootstrap: [AppComponent],
   exports:[ConfirmationDialogComponent],
   entryComponents: [ConfirmationDialogComponent,InformationDialogComponent]
