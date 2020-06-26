@@ -5,9 +5,11 @@
 }
 
 .container-fluid {
-    background-color:#fff0d1ff ;
+    /* background-color:#fff0d1ff ; */
+    background-color: white;
 }
 
 .main {
-    background-color:#fff0d1ff ;
+    /* background-color:#fff0d1ff ; */
+    background-color: white;
 }

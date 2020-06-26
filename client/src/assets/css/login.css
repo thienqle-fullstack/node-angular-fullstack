@@ -1,6 +1,6 @@
 body {
   font-family: "Karla", sans-serif;
-  background-color: #fff0d1ff;
+  background-color: white;
   min-height: 100vh; }
 
 .brand-wrapper {
@@ -16,7 +16,7 @@ body {
   -webkit-box-direction: normal;
           flex-direction: column;
   padding: 68px 100px;
-  background-color: #fff0d1ff; }
+  background-color: white; }
   @media (max-width: 991px) {
     .login-section-wrapper {
       padding-left: 50px;
