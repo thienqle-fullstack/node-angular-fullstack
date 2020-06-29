@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
                 this.authSerice.currentuser = JSON.parse(localStorage.getItem('currentuser'))
                 this.authSerice.loggedIn.next(true);
                 this.employeeForm.reset();
-                this.router.navigate(['/eventslist']);
+                this.router.navigate(['/dashboard/eventslist']);
             }
           })
       }        

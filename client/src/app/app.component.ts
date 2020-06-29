@@ -3,7 +3,7 @@ import { AuthService } from './services/auth.service';
 import { Observable } from 'rxjs';
 import { Location } from "@angular/common";
 import { Router } from '@angular/router';
-import { HostListener } from '@angular/core';
+import { PlatformLocation } from '@angular/common'
 
 @Component({
   selector: 'app-root',
@@ -16,16 +16,21 @@ export class AppComponent implements OnInit,AfterViewInit{
   currentPath: any;
   checkclick;
 
-  constructor(public authService : AuthService,private router: Router,public location: Location) {}
+  constructor(public authService : AuthService,private router: Router,public location: Location, public platformLocation: PlatformLocation) {}
 
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn;
     this.currentPath = this.location.path();
+   
   }
   
 
   ngAfterViewInit(){
     this.currentPath = this.location.path();
+    this.platformLocation.onPopState(() => {
+
+      console.log('pressed back!');
+    });
   }
 
   logout(){
@@ -35,8 +40,6 @@ export class AppComponent implements OnInit,AfterViewInit{
       localStorage.clear(); //removeItem cant seem to work
       this.authService.currentuser = null;
       this.isLoggedIn$ = this.authService.isLoggedIn;
-      console.log('here ')
-      console.log(this.isLoggedIn$)
       this.router.navigate(['/login']);
   }
 
@@ -46,12 +49,9 @@ export class AppComponent implements OnInit,AfterViewInit{
       this.currentPath = '/login'
     } else {
       this.currentPath = '/home'
+      this.router.navigate(['/home']);
     }
   }
 
-  @HostListener('window:popstate', ['$event'])
-  onPopState(event) {
-    console.log('Back button pressed');
-  }
 
 }

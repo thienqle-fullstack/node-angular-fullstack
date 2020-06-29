@@ -1,10 +1,11 @@
-<div *ngIf="currentPath!='/home'; else homeblock">
+<!-- {{currentPath}} -->
+<!-- <div *ngIf="currentPath!='/home'; else homeblock">
 <mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn ">
-  <mat-toolbar-row *ngIf = "isLoggedIn$ | async as isLoggedIn" >
+  <mat-toolbar-row *ngIf = "isLoggedIn$ | async as isLoggedIn" > -->
     <!-- <button mat-icon-button>
       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
     </button> -->
-    <h1>Employee Management Application</h1>
+    <!-- <h1>Employee Management Application</h1>
     <span class="menu-spacer"></span>
     <div>
       <a *ngIf="authService.currentuser===null; else elseBlock" mat-button routerLink="/login"> Login</a>
@@ -25,7 +26,7 @@
       <router-outlet></router-outlet>
     </div>
 </mat-drawer-content>
-</mat-drawer-container>
+</mat-drawer-container> -->
 <!-- <mat-sidenav-container>
   <mat-sidenav>
     <mat-nav-list>
@@ -39,8 +40,9 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container> -->
-</div>
-<ng-template #homeblock>
+<!-- </div>
+<ng-template #homeblock> -->
   <!-- $event carries our child variable -->
-  <app-home (notify)="checkClicked($event)"></app-home>
-</ng-template>
+  <!-- <app-home (notify)="checkClicked($event)"></app-home>
+</ng-template> -->
+<router-outlet></router-outlet>
