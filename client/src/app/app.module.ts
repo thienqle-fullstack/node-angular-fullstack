@@ -28,6 +28,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { InformationDialogComponent } from './information-dialog/information-dialog.component';
 import { LoginGaurdGuard } from './route-gaurd/login-gaurd.guard';
 import { RolesGuard } from './route-gaurd/roles.guard';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 // import { CommonModule } from '@angular/common';
 
 
@@ -37,7 +38,8 @@ import { RolesGuard } from './route-gaurd/roles.guard';
     DashboardComponent,
     ConfirmationDialogComponent,
     routingComponents,
-    InformationDialogComponent
+    InformationDialogComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

@@ -47,7 +47,7 @@ export class UserslistComponent implements OnInit {
 
   editUser(user){
     console.log(user)
-    this.router.navigate(['/edituser', user.id]);
+    this.router.navigate(['/dashboard/edituser', user.id]);
   }
 
   deleteUser(user){

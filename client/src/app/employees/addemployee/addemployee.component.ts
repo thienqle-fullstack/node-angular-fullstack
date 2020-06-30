@@ -45,7 +45,7 @@ export class AddemployeeComponent implements OnInit {
       },
       (error) => this.errorMsg = error
     )
-    this.router.navigate(['/employeelist']);
+    this.router.navigate(['/dashboard/employeelist']);
     this.employeeForm.reset();
   }
 
@@ -66,7 +66,7 @@ export class AddemployeeComponent implements OnInit {
   }
 
   cancelForm(){
-    this.router.navigate(['/employeelist']);
+    this.router.navigate(['/dashboard/employeelist']);
   }
 
 }

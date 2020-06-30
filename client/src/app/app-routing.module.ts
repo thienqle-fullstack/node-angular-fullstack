@@ -21,6 +21,7 @@ import { EventdetailsComponent } from './events/eventdetails/eventdetails.compon
 import { LoginGaurdGuard } from './route-gaurd/login-gaurd.guard';
 import { RolesGuard } from './route-gaurd/roles.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -29,19 +30,21 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'dashboard', component: DashboardComponent,
       children: [
-        {path: 'addemployee', component: AddemployeeComponent,canActivate:[LoginGaurdGuard,RolesGuard]},
-        {path: 'employeelist', component: EmployeeslistComponent,canActivate:[LoginGaurdGuard,RolesGuard]},
+        {path: 'addemployee', component: AddemployeeComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
+        {path: 'employeelist', component: EmployeeslistComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
         { path: 'employeelist/:id', component: EmployeedetailsComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
         { path: 'editemployee/:id', component: EditemployeeComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
         { path: 'userlist', component: UserslistComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
-        { path: 'adduser', component: AdduserComponent ,canActivate:[LoginGaurdGuard,RolesGuard]},
+        { path: 'adduser', component: AdduserComponent ,canActivate:[LoginGaurdGuard,RolesGuard] },
         { path: 'edituser/:id', component: EdituserComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
         { path: 'eventslist', component: EventslistComponent,canActivate:[LoginGaurdGuard] },
         { path: 'addevent', component: AddeventComponent,canActivate:[LoginGaurdGuard] },
         { path: 'editevent/:id', component: EditeventComponent,canActivate:[LoginGaurdGuard] },
-        { path: 'eventslist/:id', component: EventdetailsComponent,canActivate:[LoginGaurdGuard] },
+        { path: 'eventslist/:id', component: EventdetailsComponent,canActivate:[LoginGaurdGuard] }
       ]
-  }
+  },
+  {path: '404', component: PagenotfoundComponent},
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({
@@ -63,5 +66,6 @@ export const routingComponents = [LoginComponent,
                                   EventslistComponent,
                                   AddeventComponent,
                                   EditeventComponent,
-                                  EventdetailsComponent
+                                  EventdetailsComponent,
+                                  PagenotfoundComponent
 ]

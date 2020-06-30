@@ -18,15 +18,7 @@ export class AddeventComponent implements OnInit {
 
   minDate = new Date(new Date().setDate(new Date().getDate()));
 
-  //maxDate = new Date();
   maxDate =  new Date(new Date().setDate(this.minDate.getDate()));
-
-  // error:any={isError:false,errorMessage:''};
-  // compareTwoDates(){
-  //   if(this.maxDate<this.minDate){
-  //       this.error={isError:true, errorMessage:'End Date must be greater than start date'};
-  //   }
-  // }
 
   ngOnInit(): void {
     this.eventsServ.getEvents().subscribe(
@@ -52,7 +44,7 @@ export class AddeventComponent implements OnInit {
       },
       (error) => this.errorMsg = error
     )
-    this.router.navigate(['/eventslist']);
+    this.router.navigate(['/dashboard/eventslist']);
     this.eventForm.reset();
   }
 
@@ -81,7 +73,7 @@ export class AddeventComponent implements OnInit {
   }
 
   cancelForm(){
-    this.router.navigate(['/eventslist']);
+    this.router.navigate(['/dashboard/eventslist']);
   }
 
 }

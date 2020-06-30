@@ -2,7 +2,7 @@
     <br>
     <h2>List of Events</h2>
     <div *ngIf = "eventsServ.events" class="w-75 mt-2 mx-auto">
-      <button mat-raised-button color="primary" routerLink="/addevent" style="float: right;">Add Event</button>
+      <button mat-raised-button color="primary" routerLink="/dashboard/addevent" style="float: right;">Add Event</button>
     </div>
   </div><br/><br/>
   <mat-grid-list [cols]="breakpoint" *ngIf ="eventsServ.events" cols="3" rowHeight="1:1" gutterSize="10px"

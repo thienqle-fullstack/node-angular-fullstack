@@ -52,7 +52,7 @@ export class EventslistComponent implements OnInit {
 
   editEvent(event){
     console.log(event)
-    this.router.navigate(['/editevent', event.id]);
+    this.router.navigate(['/dashboard/editevent', event.id]);
   }
 
   deleteEvent(event,$event){

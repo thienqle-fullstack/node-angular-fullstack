@@ -22,6 +22,7 @@ export class EdituserComponent implements OnInit {
     firstname: ['', [Validators.required, Validators.minLength(3)]],
     lastname: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
+    password: ['12345'],
     role: ['', [Validators.required]]
   });
 
@@ -38,6 +39,7 @@ export class EdituserComponent implements OnInit {
             firstname: [this.user.firstname, [Validators.required, Validators.minLength(3)]],
             lastname: [this.user.lastname, [Validators.required, Validators.minLength(3)]],
             email: [this.user.email, [Validators.required, Validators.email]],
+            password: ["12345"],
             role: [this.user.role, [Validators.required]]
           });
         },
@@ -62,11 +64,16 @@ export class EdituserComponent implements OnInit {
     return this.edituserForm.get('email');
   }
 
+  get password() {
+    return this.edituserForm.get('password');
+  }
+
   get role() {
     return this.edituserForm.get('role');
   }
 
   update(userId, edituserForm){
+    console.log(edituserForm);
     this.UsersServ.updateUser(this.userId, this.edituserForm.value).subscribe(
       (data) => {
         console.log(data);
@@ -77,11 +84,11 @@ export class EdituserComponent implements OnInit {
       },
       (error) => {this.errorMsg = error; console.log(error); }
     );
-    this.router.navigate(['/userlist']);
+    this.router.navigate(['/dashboard/userlist']);
   }
 
   cancelForm(){
-    this.router.navigate(['/userlist']);
+    this.router.navigate(['/dashboard/userlist']);
   }
 
 }

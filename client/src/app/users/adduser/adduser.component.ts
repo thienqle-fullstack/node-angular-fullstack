@@ -52,7 +52,7 @@ export class AdduserComponent implements OnInit {
       },
       (error) => this.errorMsg = error
     )
-    this.router.navigate(['/userlist']);
+    this.router.navigate(['/dashboard/userlist']);
     this.userForm.reset();
   }
 
@@ -77,7 +77,7 @@ export class AdduserComponent implements OnInit {
   }
 
   cancelForm(){
-    this.router.navigate(['/employeelist']);
+    this.router.navigate(['/dashboard/userlist']);
   }
 
 }

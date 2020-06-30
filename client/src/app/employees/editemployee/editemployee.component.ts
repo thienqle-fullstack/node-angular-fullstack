@@ -67,11 +67,11 @@ export class EditemployeeComponent implements OnInit {
       },
       (error) => {this.errorMsg = error; console.log(error); }
     );
-    this.router.navigate(['/employeelist']);
+    this.router.navigate(['/dashboard/employeelist']);
   }
 
   cancelForm(){
-    this.router.navigate(['/employeelist']);
+    this.router.navigate(['/dashboard/employeelist']);
   }
 
 }

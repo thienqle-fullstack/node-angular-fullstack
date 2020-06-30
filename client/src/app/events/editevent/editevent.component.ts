@@ -83,11 +83,11 @@ export class EditeventComponent implements OnInit {
       },
       (error) => {this.errorMsg = error; console.log(error); }
     );
-    this.router.navigate(['/eventslist']);
+    this.router.navigate(['/dashboard/eventslist']);
   }
 
   cancelForm(){
-    this.router.navigate(['/eventslist']);
+    this.router.navigate(['/dashboard/eventslist']);
   }
 
 }

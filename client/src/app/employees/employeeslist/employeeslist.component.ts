@@ -32,12 +32,12 @@ export class EmployeeslistComponent implements OnInit {
   
   selectemployee(employee){
     console.log(employee)
-    this.router.navigate(['/employeelist', employee.id]);
+    this.router.navigate(['/dashboard/employeelist', employee.id]);
   }
 
   editEmployee(employee){
     console.log(employee)
-    this.router.navigate(['/editemployee', employee.id]);
+    this.router.navigate(['/dashboard/editemployee', employee.id]);
   }
 
 
