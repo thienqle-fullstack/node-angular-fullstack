@@ -8,11 +8,20 @@
       Logo
     </div>
     <div class="w3-display-middle">
-      <h1 class="w3-jumbo w3-animate-top w3-center">WELCOME TO</h1>
-      <h1 class="w3-jumbo w3-animate-top w3-center">MANAGEMENT APPLICATION </h1>
+      <!-- <h1 class="w3-jumbo w3-animate-top w3-center">WELCOME TO</h1> -->
+      <h1 class="w3-jumbo w3-animate-top w3-center">EMPLOYMENT MANAGEMENT APPLICATION </h1>
       <hr class="w3-border-grey" style="margin:auto;width:40%">
       <p></p>
-      <p class="w3-large w3-center"><a class="login-btn btn-home" type="button" routerLink="/login" (click)="changeRoute()">Login</a></p>
+      <p *ngIf="!authService.isLoggedin1(); else login" >
+        <a class="login-btn btn-home" type="button" routerLink="/login" (click)="changeRoute()">Login</a>
+      </p>
+      <ng-template #login>
+      <p  class="w3-large w3-center">
+        <a class="login-btn btn-home w3-center bg-danger" type="button" routerLink="/login" (click)="authService.logout()">Logout</a>
+        &nbsp;
+        <a class="login-btn btn-home w3-center bg-success" type="button" routerLink="/dashboard/eventslist" >Dashboard</a>
+      </p>
+    </ng-template>
     </div>
     <div class="w3-display-bottomleft w3-padding-large">
       Powered by us

@@ -21,6 +21,14 @@ export class AuthService {
     return this.loggedIn.asObservable();
   }
 
+  isLoggedin1() {
+    if(this.currentuser!==null){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   register(userData): Observable<User[]>{
     return this.http.post<User[]>(this._url + '/register', userData)
     // .pipe(catchError(this.errorHandler));

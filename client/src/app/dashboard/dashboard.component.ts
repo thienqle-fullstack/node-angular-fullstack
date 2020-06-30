@@ -43,14 +43,14 @@ export class DashboardComponent implements OnInit {
       this.router.navigate(['/login']);
   }
 
-  checkClicked($variablefromchild){
-    this.checkclick = $variablefromchild
-    if(this.checkclick){
-      this.currentPath = '/login'
-    } else {
-      this.currentPath = '/home'
-      this.router.navigate(['/home']);
-    }
-  }
+  // checkClicked($variablefromchild){
+  //   this.checkclick = $variablefromchild
+  //   if(this.checkclick){
+  //     this.currentPath = '/login'
+  //   } else {
+  //     this.currentPath = '/home'
+  //     this.router.navigate(['/home']);
+  //   }
+  // }
 
 }

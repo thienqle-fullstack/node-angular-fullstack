@@ -1,5 +1,5 @@
 
-<mat-toolbar color="primary" *ngIf="authService.isLoggedIn">
+<mat-toolbar color="primary" *ngIf="authService.isLoggedin1()">
       <mat-toolbar-row>
         <!-- <button mat-icon-button>
           <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
@@ -15,8 +15,8 @@
     <mat-drawer-container class="example-container">
       <mat-drawer *ngIf="authService.currentuser!==null" mode="side" opened>
         <mat-nav-list>
-          <a *ngIf="authService.currentuser.role==0" mat-list-item routerLink="/dashboard//employeelist"> Lists of Employees </a>
-          <a *ngIf="authService.currentuser.role==0" mat-list-item routerLink="/dashboard//userlist"> Lists of Users </a>
+          <a *ngIf="authService.currentuser.role==0" mat-list-item routerLink="/dashboard/employeelist"> Lists of Employees </a>
+          <a *ngIf="authService.currentuser.role==0" mat-list-item routerLink="/dashboard/userlist"> Lists of Users </a>
           <a mat-list-item routerLink="/dashboard/eventslist"> Lists of Events </a>
         </mat-nav-list>
       </mat-drawer>

@@ -14,7 +14,8 @@ export class LoginGaurdGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-    if(this.authService.loggedIn.value){
+    // if(this.authService.loggedIn.value){
+    if(this.authService.isLoggedin1()){
       return true;
     } else {
       this.router.navigate(['/login']);
