@@ -29,6 +29,7 @@ import { InformationDialogComponent } from './information-dialog/information-dia
 import { LoginGaurdGuard } from './route-gaurd/login-gaurd.guard';
 import { RolesGuard } from './route-gaurd/roles.guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import {MatMenuModule} from '@angular/material/menu';
 // import { CommonModule } from '@angular/common';
 
 
@@ -61,7 +62,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     MatFormFieldModule,
     MatNativeDateModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule
   ],
   providers: [LoginGaurdGuard,RolesGuard],
   bootstrap: [AppComponent],

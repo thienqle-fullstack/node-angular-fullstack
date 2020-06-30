@@ -45,6 +45,9 @@ export class AuthService {
 
   logout() {
     this.loggedIn.next(false);
+    localStorage.removeItem('currentUser');
+    localStorage.clear(); //removeItem cant seem to work
+    this.currentuser = null;
   }
 
   errorHandler(error: HttpErrorResponse){
