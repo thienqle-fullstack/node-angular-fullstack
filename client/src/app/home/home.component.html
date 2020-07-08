@@ -9,10 +9,10 @@
     </div>
     <div class="w3-display-middle">
       <!-- <h1 class="w3-jumbo w3-animate-top w3-center">WELCOME TO</h1> -->
-      <h1 class="w3-jumbo w3-animate-top w3-center">EMPLOYMENT MANAGEMENT APPLICATION </h1>
+      <h1 class="w3-jumbo w3-animate-top w3-center">Welcome to EMA</h1>
       <hr class="w3-border-grey" style="margin:auto;width:40%">
       <p></p>
-      <p *ngIf="!authService.isLoggedin1(); else login"   class="w3-large w3-center">
+      <p *ngIf="!authService.isLoggedin1(); else login" class="w3-large w3-center">
         <a class="login-btn btn-home" type="button" routerLink="/login" (click)="changeRoute()">Login</a>
       </p>
       <ng-template #login>

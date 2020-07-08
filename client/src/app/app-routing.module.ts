@@ -22,6 +22,7 @@ import { LoginGaurdGuard } from './route-gaurd/login-gaurd.guard';
 import { RolesGuard } from './route-gaurd/roles.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { EventscalenderComponent} from './events/eventscalender/eventscalender.component'
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -37,12 +38,13 @@ const routes: Routes = [
         { path: 'userlist', component: UserslistComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
         { path: 'adduser', component: AdduserComponent ,canActivate:[LoginGaurdGuard,RolesGuard] },
         { path: 'edituser/:id', component: EdituserComponent,canActivate:[LoginGaurdGuard,RolesGuard] },
-        { path: 'eventslist', component: EventslistComponent,canActivate:[LoginGaurdGuard] },
+        { path: 'eventslist', component: EventscalenderComponent,canActivate:[LoginGaurdGuard] },
         { path: 'addevent', component: AddeventComponent,canActivate:[LoginGaurdGuard] },
         { path: 'editevent/:id', component: EditeventComponent,canActivate:[LoginGaurdGuard] },
         { path: 'eventslist/:id', component: EventdetailsComponent,canActivate:[LoginGaurdGuard] }
       ]
   },
+  // { path: 'eventslist', component: EventscalenderComponent,canActivate:[LoginGaurdGuard] },
   {path: '404', component: PagenotfoundComponent},
   {path: '**', redirectTo: '/404'}
 ];

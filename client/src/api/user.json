@@ -9,12 +9,12 @@
       "id": 4
     },
     {
-      "id": 5,
+      "email": "remya@gmail.com",
+      "password": "$2a$10$9HEwYRh40nNBKpoH2Nufre2..zFBV26WMLrf7w4QYjCBIyDvkiVOO",
       "firstname": "Remya",
       "lastname": "Ambika",
-      "email": "remya@gmail.com",
-      "password": "$2a$10$0LiKXFiE8UsW2MhT6iRUZ.FGFPjky8zzpado.pmcxGZIhP.yKjkWW",
-      "role": "1"
+      "role": "1",
+      "id": 5
     },
     {
       "email": "olivier2@mail.com",
@@ -41,11 +41,11 @@
       "role": "0"
     },
     {
-      "email": "remya@mail.com",
-      "password": "$2a$10$m1K8V/M7tyr6a8/kb5xmE.E8dCCe6axaiaVxhjzebLHRzaexz7EXi",
-      "firstname": "Remya",
-      "lastname": "Ambika",
-      "role": "0",
+      "email": "test@test.com",
+      "password": "$2a$10$Dk6rcg6wonn3v.lo8LJ8XO68LihTjmQSHGrV04i9F5yQGUKfNdUNy",
+      "firstname": "Test",
+      "lastname": "Test",
+      "role": "1",
       "id": 9
     }
   ],
@@ -121,14 +121,6 @@
       "location": "New Jersey",
       "startDate": "2021-01-06T05:00:00.000Z",
       "endDate": "2021-01-31T05:00:00.000Z"
-    },
-    {
-      "id": 14,
-      "name": "Training",
-      "category": "Python",
-      "location": "South Bruswick",
-      "startDate": "2020-08-01T04:00:00.000Z",
-      "endDate": "2020-08-31T04:00:00.000Z"
     }
   ]
 }
